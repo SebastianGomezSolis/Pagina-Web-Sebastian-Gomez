@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio educativo de Programación IV sobre fundamentos web, HTML, CSS y backend.">
+    <title>HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/web-logo.png" alt="Logo" height="30" class="me-2">
+            Programación IV
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="fundamentos.html">Fundamentos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="html.html">HTML</a></li>
+                <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+                <li class="nav-item"><a class="nav-link" href="backend.html">Backend</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-4 flex-grow-1">
+    <section class="page-hero mb-4">
+        <span class="badge rounded-pill badge-soft mb-3">Tema 2</span>
+        <h1 class="fw-bold">HTML</h1>
+        <p class="mb-0">HTML es el lenguaje de marcado que define la estructura del contenido de una página web.</p>
+    </section>
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">¿Qué es HTML?</h2>
+                <p>HTML significa <em>HyperText Markup Language</em>. Se usa para organizar textos, imágenes, enlaces, tablas, formularios y otras partes de una página.</p>
+            </div></div>
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Estructura básica de un documento HTML</h2>
+                <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hola mundo&lt;/h1&gt;
+    &lt;p&gt;Mi primera página web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <ul>
+                    <li><strong>&lt;html&gt;</strong>: contiene todo el documento.</li>
+                    <li><strong>&lt;head&gt;</strong>: incluye metadatos, título y enlaces a estilos.</li>
+                    <li><strong>&lt;body&gt;</strong>: contiene lo visible para el usuario.</li>
+                </ul>
+            </div></div>
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Etiquetas principales</h2>
+                <div class="accordion" id="acordeonHtml">
+                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#c1">Título, meta y encabezados</button></h2><div id="c1" class="accordion-collapse collapse show" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre class="code-block"><code>&lt;title&gt;Mi sitio&lt;/title&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;</code></pre></div></div></div>
+                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c2">Párrafos, enlaces e imágenes</button></h2><div id="c2" class="accordion-collapse collapse" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre class="code-block"><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;
+&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;
+&lt;img src="img/web-logo.png" alt="Logo"&gt;</code></pre></div></div></div>
+                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c3">Listas</button></h2><div id="c3" class="accordion-collapse collapse" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre class="code-block"><code>&lt;ul&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Paso 1&lt;/li&gt;
+  &lt;li&gt;Paso 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre></div></div></div>
+                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c4">Tablas y formularios</button></h2><div id="c4" class="accordion-collapse collapse" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre class="code-block"><code>&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Edad&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;form&gt;
+  &lt;input type="text" placeholder="Nombre"&gt;
+  &lt;input type="email" placeholder="Correo"&gt;
+  &lt;button&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre></div></div></div>
+                </div>
+            </div></div>
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Tipos de input</h2>
+                <p>Los formularios permiten capturar información del usuario. Algunos tipos comunes son:</p>
+                <div class="row row-cols-2 row-cols-md-3 g-3">
+                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">text</div></div></div>
+                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">email</div></div></div>
+                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">password</div></div></div>
+                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">number</div></div></div>
+                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">date</div></div></div>
+                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">checkbox</div></div></div>
+                </div>
+            </div></div>
+            <div class="card subtopic-card"><div class="card-body">
+                <h2 class="section-title">Etiquetas semánticas</h2>
+                <p>Las etiquetas semánticas describen el propósito del contenido y mejoran la organización y accesibilidad.</p>
+                <pre class="code-block"><code>&lt;header&gt;Encabezado del sitio&lt;/header&gt;
+&lt;nav&gt;Menú de navegación&lt;/nav&gt;
+&lt;section&gt;Sección de contenido&lt;/section&gt;
+&lt;article&gt;Artículo independiente&lt;/article&gt;
+&lt;footer&gt;Pie de página&lt;/footer&gt;</code></pre>
+                <div class="example-box p-3">Usar semántica ayuda a que el código sea más claro para los desarrolladores, los navegadores y los lectores de pantalla.</div>
+            </div></div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card info-card mb-4"><div class="card-body">
+                <h4>Buenas prácticas en HTML</h4>
+                <ul class="mb-0">
+                    <li>Usar etiquetas correctas según el contenido.</li>
+                    <li>Agregar <code>alt</code> en las imágenes.</li>
+                    <li>Indentar el código.</li>
+                    <li>Separar estructura y estilos.</li>
+                </ul>
+            </div></div>
+            <div class="card info-card mb-4"><div class="card-body">
+                <h4>Ejemplo práctico</h4>
+                <pre class="code-block mb-0"><code>&lt;section&gt;
+  &lt;h2&gt;Noticias&lt;/h2&gt;
+  &lt;article&gt;
+    &lt;h3&gt;Nuevo curso&lt;/h3&gt;
+    &lt;p&gt;Se abrió matrícula.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;</code></pre>
+            </div></div>
+            <div class="card info-card"><img src="img/web-logo.png" class="card-img-top p-4" alt="HTML y web" style="max-height:250px; object-fit:contain;"><div class="card-body"><p class="mb-0">HTML es la base estructural de cualquier sitio web.</p></div></div>
+        </div>
+    </div>
+</main>
+
+<footer class="text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        <div>
+            <strong>Proyecto educativo de Programación IV</strong><br>
+        </div>
+        <div>
+            Sitio web desarrollado con HTML5, CSS y Bootstrap.
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

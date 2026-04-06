@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio educativo de Programación IV sobre fundamentos web, HTML, CSS y backend.">
+    <title>Fundamentos de Internet y la Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/web-logo.png" alt="Logo" height="30" class="me-2">
+            Programación IV
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fundamentos.html">Fundamentos</a></li>
+                <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+                <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+                <li class="nav-item"><a class="nav-link" href="backend.html">Backend</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-4 flex-grow-1">
+    <section class="page-hero mb-4">
+        <span class="badge rounded-pill badge-soft mb-3">Tema 1</span>
+        <h1 class="fw-bold">Fundamentos de Internet y la Web</h1>
+        <p class="mb-0">Esta sección explica los conceptos básicos necesarios para entender cómo funciona la comunicación en la web y cómo una página llega desde un servidor hasta el navegador.</p>
+    </section>
+
+    <section class="row g-4">
+        <div class="col-lg-8">
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">¿Qué es Internet?</h2>
+                <p>Internet es una red mundial de computadoras y dispositivos conectados entre sí. Gracias a esta red se puede intercambiar información, usar aplicaciones en línea, enviar correos y navegar por páginas web.</p>
+                <div class="example-box p-3">Ejemplo: cuando una persona ve un video en YouTube o envía un correo electrónico, está usando Internet para comunicarse con servidores remotos.</div>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">¿Qué es la World Wide Web?</h2>
+                <p>La Web o World Wide Web es un servicio que funciona sobre Internet. Está formada por páginas y sitios web enlazados entre sí, los cuales se pueden visitar mediante un navegador como Chrome, Firefox o Edge.</p>
+                <p>Las páginas web se construyen principalmente con HTML, se diseñan con CSS y pueden agregar interactividad con JavaScript.</p>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Diferencia entre Internet y Web</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle">
+                        <thead><tr><th>Internet</th><th>Web</th></tr></thead>
+                        <tbody>
+                        <tr><td>Es la infraestructura de red.</td><td>Es un servicio que funciona sobre esa red.</td></tr>
+                        <tr><td>Permite conectar dispositivos.</td><td>Permite acceder a páginas web.</td></tr>
+                        <tr><td>Incluye servicios como correo, FTP o videollamadas.</td><td>Usa principalmente HTTP y HTTPS.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box p-3">Analogía: Internet sería la carretera, mientras que la Web serían los sitios y páginas que se recorren por esa carretera.</div>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Modelo OSI y sus capas</h2>
+                <p>El modelo OSI es una forma de explicar la comunicación en redes mediante 7 capas. Cada una cumple una función específica y juntas permiten que los datos viajen de un origen a un destino.</p>
+                <div class="row g-3 mt-1">
+                    <div class="col-md-6"><div class="card border-primary h-100"><div class="card-body"><strong>1. Física</strong><br>Transmite bits por cables, fibra o señales inalámbricas.</div></div></div>
+                    <div class="col-md-6"><div class="card border-primary h-100"><div class="card-body"><strong>2. Enlace</strong><br>Organiza tramas y controla errores locales.</div></div></div>
+                    <div class="col-md-6"><div class="card border-primary h-100"><div class="card-body"><strong>3. Red</strong><br>Encamina paquetes usando direcciones IP.</div></div></div>
+                    <div class="col-md-6"><div class="card border-primary h-100"><div class="card-body"><strong>4. Transporte</strong><br>Entrega datos completos y en orden.</div></div></div>
+                    <div class="col-md-6"><div class="card border-primary h-100"><div class="card-body"><strong>5. Sesión</strong><br>Administra la comunicación entre aplicaciones.</div></div></div>
+                    <div class="col-md-6"><div class="card border-primary h-100"><div class="card-body"><strong>6. Presentación</strong><br>Traduce, comprime y cifra la información.</div></div></div>
+                    <div class="col-12"><div class="card border-primary"><div class="card-body"><strong>7. Aplicación</strong><br>Es la capa más cercana al usuario. Aquí trabajan protocolos como HTTP, FTP y SMTP.</div></div></div>
+                </div>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Dirección IP</h2>
+                <p>Una dirección IP identifica a un dispositivo dentro de una red. Permite saber quién envía datos y quién debe recibirlos.</p>
+                <ul>
+                    <li><strong>IPv4:</strong> formato tradicional como 192.168.1.10.</li>
+                    <li><strong>IPv6:</strong> formato más largo y moderno con muchas más direcciones disponibles.</li>
+                </ul>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">DNS</h2>
+                <p>El sistema DNS traduce los nombres de dominio a direcciones IP. Así, una persona escribe <strong>google.com</strong> en lugar de memorizar números.</p>
+                <div class="example-box p-3"><strong>Ejemplo:</strong> el navegador pregunta al DNS cuál es la IP de un dominio y luego se conecta al servidor correcto.</div>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Servidores, clientes y navegadores</h2>
+                <p><strong>Cliente:</strong> es el programa que hace una solicitud, como un navegador web.</p>
+                <p><strong>Servidor:</strong> es la máquina que almacena recursos y responde a las solicitudes.</p>
+                <p><strong>Navegador:</strong> interpreta HTML, CSS y JavaScript para mostrar la página al usuario.</p>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">Funcionamiento de una petición web</h2>
+                <ol>
+                    <li>El usuario escribe una URL en el navegador.</li>
+                    <li>El navegador consulta el DNS para encontrar la IP.</li>
+                    <li>Se envía una petición HTTP o HTTPS al servidor.</li>
+                    <li>El servidor responde con los recursos solicitados.</li>
+                    <li>El navegador renderiza la página.</li>
+                </ol>
+            </div></div>
+
+            <div class="card subtopic-card mb-4"><div class="card-body">
+                <h2 class="section-title">HTTP, HTTPS, SSL y TLS</h2>
+                <p><strong>HTTP</strong> es un protocolo de comunicación usado para transferir páginas y recursos web.</p>
+                <p><strong>HTTPS</strong> es la versión segura de HTTP. Protege la información mediante cifrado.</p>
+                <p><strong>SSL</strong> y <strong>TLS</strong> son tecnologías de seguridad; hoy en día TLS es la más usada. Su función es cifrar la comunicación entre cliente y servidor.</p>
+                <div class="example-box p-3">Ejemplo: en una tienda en línea se usa HTTPS para proteger datos como contraseñas o información de pago.</div>
+            </div></div>
+
+            <div class="card subtopic-card"><div class="card-body">
+                <h2 class="section-title">Métodos HTTP y códigos de estado</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <h5>Métodos</h5>
+                        <ul>
+                            <li><strong>GET:</strong> obtiene información.</li>
+                            <li><strong>POST:</strong> envía datos nuevos.</li>
+                            <li><strong>PUT:</strong> actualiza un recurso.</li>
+                            <li><strong>DELETE:</strong> elimina un recurso.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Códigos de estado</h5>
+                        <ul>
+                            <li><strong>200:</strong> solicitud exitosa.</li>
+                            <li><strong>404:</strong> recurso no encontrado.</li>
+                            <li><strong>500:</strong> error interno del servidor.</li>
+                        </ul>
+                    </div>
+                </div>
+                <pre class="code-block mt-3"><code>GET /productos HTTP/1.1
+Host: ejemplo.com
+
+Respuesta: 200 OK</code></pre>
+            </div></div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card info-card mb-4">
+                <img src="img/osi.png" class="card-img-top" alt="Modelo OSI" style="object-fit: contain; max-height: 250px;">
+                <div class="card-body">
+                    <h4>Resumen rápido</h4>
+                    <p>Internet es la red, la Web es un servicio sobre esa red, y HTTP/HTTPS permiten solicitar y recibir contenido.</p>
+                </div>
+            </div>
+            <div class="card info-card mb-4">
+                <img src="img/internetww.jpg" class="card-img-top" alt="Internet y web" style="height: 220px; object-fit: cover;">
+                <div class="card-body">
+                    <h4>Concepto importante</h4>
+                    <p>Sin DNS sería muy difícil navegar, porque tendríamos que recordar direcciones IP numéricas para cada sitio.</p>
+                </div>
+            </div>
+            <div class="card info-card">
+                <div class="card-body">
+                    <h4>Ejemplo de URL</h4>
+                    <pre class="code-block mb-0"><code>https://www.ejemplo.com/productos</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        <div>
+            <strong>Proyecto educativo de Programación IV</strong><br>
+        </div>
+        <div>
+            Sitio web desarrollado con HTML5, CSS y Bootstrap.
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

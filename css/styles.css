@@ -1,0 +1,78 @@
+:root {
+  --brand-dark: #0f172a;
+  --brand-blue: #1d4ed8;
+  --brand-soft: #e2e8f0;
+  --brand-bg: #f8fafc;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  color: #1e293b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero {
+  background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(29,78,216,.92)), url('img/tron2.jpg') center/cover;
+  color: white;
+  border-radius: 1.25rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 45px rgba(15,23,42,.18);
+}
+.page-hero {
+  background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(37,99,235,.90));
+  color: white;
+  border-radius: 1rem;
+  padding: 2.2rem 1.6rem;
+  box-shadow: 0 16px 35px rgba(15,23,42,.16);
+}
+.topic-card, .subtopic-card, .info-card {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15,23,42,.08);
+}
+.topic-card:hover {
+  transform: translateY(-3px);
+  transition: .2s ease;
+}
+.badge-soft {
+  background: #dbeafe;
+  color: #1e3a8a;
+  border: 1px solid #bfdbfe;
+}
+.code-block {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: .9rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: .95rem;
+}
+.section-title {
+  border-left: 6px solid var(--brand-blue);
+  padding-left: .8rem;
+}
+.example-box {
+  background: #eff6ff;
+  border-left: 5px solid #2563eb;
+  border-radius: .75rem;
+}
+.table thead th {
+  background: #0f172a;
+  color: white;
+}
+footer {
+  background: #0f172a;
+}
+.navbar-brand img {
+  object-fit: contain;
+}
+.quick-links a {
+  text-decoration: none;
+}
+.quick-links .list-group-item {
+  border-radius: .75rem;
+  margin-bottom: .55rem;
+  border: 1px solid #cbd5e1;
+}
+@media (max-width: 768px) {
+  .hero, .page-hero { padding: 2rem 1.2rem; }
+}
