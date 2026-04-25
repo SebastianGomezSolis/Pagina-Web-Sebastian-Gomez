@@ -111,7 +111,7 @@
                 <div class="card-body">
                     <h4>Eventos que más se usan</h4>
                     <ul class="mb-0">
-                        <li><code>click</code> para botones.</li>
+                        <li><code>click</code> para botones y celdas.</li>
                         <li><code>keydown</code> para mover personajes.</li>
                         <li><code>change</code> en formularios.</li>
                         <li><code>DOMContentLoaded</code> para iniciar el programa cuando el DOM ya existe.</li>
@@ -123,9 +123,9 @@
                 <div class="card-body">
                     <h4>Conceptos aplicados en el juego</h4>
                     <ul class="mb-0">
-                        <li>Manipulación del DOM.</li>
-                        <li>Manejo de eventos con teclado.</li>
-                        <li>Estructuras de datos con matrices.</li>
+                        <li>Generación dinámica del tablero con HTML.</li>
+                        <li>Clase <code>Punto</code> para representar posiciones.</li>
+                        <li>Manejo de eventos con teclado y clic.</li>
                         <li>Temporizadores con <code>setInterval</code>.</li>
                         <li>Detección de colisiones.</li>
                     </ul>
@@ -135,21 +135,36 @@
             <div class="card info-card">
                 <div class="card-body">
                     <h4>Controles del juego</h4>
-                    <p class="mb-2">Usa las flechas del teclado para mover al jugador.</p>
-                    <p class="mb-0">Objetivo: recoger todos los puntos y evitar a los enemigos.</p>
+                    <p class="mb-2">1. Configura el <strong>alto</strong> y <strong>ancho</strong> del tablero.</p>
+                    <p class="mb-2">2. Presiona <strong>Generar tablero</strong>.</p>
+                    <p class="mb-2">3. <strong>Haz clic</strong> en una celda libre para colocar al jugador.</p>
+                    <p class="mb-0">4. Usa las <strong>flechas del teclado</strong> para moverte. ¡Recoge todos los puntos y evita a los enemigos!</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Juego -->
     <section class="card subtopic-card mt-4">
         <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
-                <div>
-                    <h2 class="section-title mb-2">Proyecto: juego tipo tablero</h2>
-                    <p class="mb-0">Juego inspirado en Pac-Man con tablero, obstáculos, puntos, enemigos y condiciones de victoria o derrota.</p>
+            <h2 class="section-title mb-3">Proyecto: juego tipo tablero</h2>
+            <p class="mb-4">Juego inspirado en Pac-Man con tablero generado dinámicamente, obstáculos, puntos, enemigos y condiciones de victoria o derrota.</p>
+
+            <div class="row g-3 align-items-end mb-4">
+                <div class="col-auto">
+                    <label for="alto" class="form-label fw-bold mb-1">Alto</label>
+                    <input id="alto" type="number" class="form-control" style="width:90px" value="10" min="5" max="20" step="1">
                 </div>
-                <button id="reiniciarJuego" class="btn btn-primary">Reiniciar juego</button>
+                <div class="col-auto">
+                    <label for="ancho" class="form-label fw-bold mb-1">Ancho</label>
+                    <input id="ancho" type="number" class="form-control" style="width:90px" value="10" min="5" max="20" step="1">
+                </div>
+                <div class="col-auto">
+                    <button id="btnGenerar" class="btn btn-success">Generar tablero</button>
+                </div>
+                <div class="col-auto">
+                    <button id="reiniciarJuego" class="btn btn-primary">Reiniciar</button>
+                </div>
             </div>
 
             <div class="row g-4">
@@ -160,13 +175,13 @@
                     <div class="score-panel h-100">
                         <div class="score-item"><strong>Puntaje:</strong> <span id="score">0</span></div>
                         <div class="score-item"><strong>Puntos restantes:</strong> <span id="remainingDots">0</span></div>
-                        <div class="score-item"><strong>Estado:</strong> <span id="gameStatus">En juego</span></div>
+                        <div class="score-item"><strong>Estado:</strong> <span id="gameStatus">Genera un tablero para comenzar</span></div>
                         <hr>
                         <div class="small text-muted">
                             <p class="mb-2"><strong>Leyenda:</strong></p>
                             <p class="mb-1">🟦 Muro</p>
-                            <p class="mb-1">🟨 Jugador</p>
-                            <p class="mb-1">🔴 Enemigo</p>
+                            <p class="mb-1">🟨 Jugador (clic para colocar)</p>
+                            <p class="mb-1">👾 Enemigo</p>
                             <p class="mb-0">⚪ Punto</p>
                         </div>
                     </div>
@@ -179,7 +194,7 @@
 <footer class="text-white py-4 mt-5">
     <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
         <div>
-            <strong>Proyecto educativo de Programación IV</strong><br>
+            <strong>Proyecto educativo de Programación IV</strong>
         </div>
         <div>
             Sitio web desarrollado con HTML5, CSS, Bootstrap y JavaScript.
