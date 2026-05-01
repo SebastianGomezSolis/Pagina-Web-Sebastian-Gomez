@@ -194,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ── Enemigos ────────────────────────────────────────────────────────────
     function iniciarEnemigos() {
         if (enemyInterval) clearInterval(enemyInterval);
         enemyInterval = setInterval(moverEnemigos, 600);
