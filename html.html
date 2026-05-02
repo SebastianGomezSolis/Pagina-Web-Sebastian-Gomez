@@ -3,52 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sitio educativo de Programación IV sobre fundamentos web, HTML, CSS y backend.">
-    <title>HTML</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <title>HTML | Programación IV</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="img/web-logo.png" alt="Logo" height="30" class="me-2">
-            Programación IV
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="fundamentos.html">Fundamentos</a></li>
-                <li class="nav-item"><a class="nav-link active" href="html.html">HTML</a></li>
-                <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
-                <li class="nav-item"><a class="nav-link" href="backend.html">Backend</a></li>
-                <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
-            </ul>
+<header class="topbar" id="topbar"></header>
+
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="content">
+
+        <nav class="breadcrumb-edu">
+            <a href="index.html">Inicio</a>
+            <span class="sep">›</span>
+            <span class="cur">HTML</span>
+        </nav>
+
+        <header class="topic-header">
+            <span class="topic-badge">Tema 2 de 5</span>
+            <h1>HTML</h1>
+            <p class="lead">HTML (<em>HyperText Markup Language</em>) es el lenguaje de marcado que define la estructura del contenido de una página web: textos, imágenes, enlaces, tablas y formularios.</p>
+            <div class="meta">
+                <span>Estructura</span>
+                <span>Etiquetas</span>
+                <span>Formularios</span>
+                <span>Semántica</span>
+            </div>
+        </header>
+
+        <!-- 1 -->
+        <div class="edu-card">
+            <h2><span class="num">1</span> ¿Qué es HTML?</h2>
+            <p>HTML significa <em>HyperText Markup Language</em>. Se usa para organizar y estructurar textos, imágenes, enlaces, tablas, formularios y demás partes de una página web.</p>
+            <div class="callout info">
+                <span class="callout-icon"></span>
+                <div>HTML no es un lenguaje de programación — es un lenguaje de <strong>marcado</strong> que describe la estructura del contenido.</div>
+            </div>
         </div>
-    </div>
-</nav>
 
-<main class="container my-4 flex-grow-1">
-    <section class="page-hero mb-4">
-        <span class="badge rounded-pill badge-soft mb-3">Tema 2</span>
-        <h1 class="fw-bold">HTML</h1>
-        <p class="mb-0">HTML es el lenguaje de marcado que define la estructura del contenido de una página web.</p>
-    </section>
-    <div class="row g-4">
-        <div class="col-lg-8">
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">¿Qué es HTML?</h2>
-                <p>HTML significa <em>HyperText Markup Language</em>. Se usa para organizar textos, imágenes, enlaces, tablas, formularios y otras partes de una página.</p>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Estructura básica de un documento HTML</h2>
-                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+        <!-- 2 -->
+        <div class="edu-card">
+            <h2><span class="num">2</span> Estructura básica de un documento HTML</h2>
+            <div class="code-wrap">
+                <span class="code-lang">HTML</span>
+                <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -60,101 +60,176 @@
     &lt;p&gt;Mi primera página web.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-                <ul>
-                    <li><strong>&lt;html&gt;</strong>: contiene todo el documento.</li>
-                    <li><strong>&lt;head&gt;</strong>: incluye metadatos, título y enlaces a estilos.</li>
-                    <li><strong>&lt;body&gt;</strong>: contiene lo visible para el usuario.</li>
-                </ul>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Etiquetas principales</h2>
-                <div class="accordion" id="acordeonHtml">
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#c1">Título, meta y encabezados</button></h2><div id="c1" class="accordion-collapse collapse show" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre><code class="language-html">&lt;title&gt;Mi sitio&lt;/title&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;h1&gt;Título principal&lt;/h1&gt;
-&lt;h2&gt;Subtítulo&lt;/h2&gt;</code></pre></div></div></div>
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c2">Párrafos, enlaces e imágenes</button></h2><div id="c2" class="accordion-collapse collapse" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre><code class="language-html">&lt;p&gt;Este es un párrafo.&lt;/p&gt;
-&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;
-&lt;img src="img/web-logo.png" alt="Logo"&gt;</code></pre></div></div></div>
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c3">Listas</button></h2><div id="c3" class="accordion-collapse collapse" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre><code class="language-html">&lt;ul&gt;
-  &lt;li&gt;Elemento 1&lt;/li&gt;
-  &lt;li&gt;Elemento 2&lt;/li&gt;
-&lt;/ul&gt;
+            </div>
+            <ul>
+                <li><code>&lt;html&gt;</code> — contiene todo el documento.</li>
+                <li><code>&lt;head&gt;</code> — metadatos, título y enlaces a estilos.</li>
+                <li><code>&lt;body&gt;</code> — contenido visible para el usuario.</li>
+                <li><code>&lt;title&gt;</code> — texto que aparece en la pestaña del navegador.</li>
+                <li><code>&lt;meta&gt;</code> — información sobre el documento (charset, viewport…).</li>
+            </ul>
+        </div>
 
-&lt;ol&gt;
+        <!-- 3 -->
+        <div class="edu-card">
+            <h2><span class="num">3</span> Encabezados y párrafos</h2>
+            <div class="code-wrap">
+                <span class="code-lang">HTML</span>
+                <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Sección&lt;/h3&gt;
+&lt;h4&gt;Sub-sección&lt;/h4&gt;
+&lt;h5&gt;Nivel 5&lt;/h5&gt;
+&lt;h6&gt;Nivel 6&lt;/h6&gt;
+
+&lt;p&gt;Este es un párrafo normal.&lt;/p&gt;</code></pre>
+            </div>
+            <div class="callout tip">
+                <span class="callout-icon"></span>
+                <div>Solo debe existir <strong>un</strong> <code>&lt;h1&gt;</code> por página. Los demás encabezados se usan en orden jerárquico.</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="edu-card">
+            <h2><span class="num">4</span> Enlaces e imágenes</h2>
+            <div class="code-wrap">
+                <span class="code-lang">HTML</span>
+                <pre><code>&lt;!-- Enlace --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Ir a Google&lt;/a&gt;
+
+&lt;!-- Imagen --&gt;
+&lt;img src="img/web-logo.png" alt="Logo del sitio" width="200"&gt;</code></pre>
+            </div>
+            <div class="callout good">
+                <span class="callout-icon"></span>
+                <div>Siempre incluir el atributo <code>alt</code> en las imágenes — mejora la accesibilidad y el SEO.</div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="edu-card">
+            <h2><span class="num">5</span> Listas</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div>
+                    <h3>Lista ordenada</h3>
+                    <div class="code-wrap">
+                        <span class="code-lang">HTML</span>
+                        <pre><code>&lt;ol&gt;
   &lt;li&gt;Paso 1&lt;/li&gt;
   &lt;li&gt;Paso 2&lt;/li&gt;
-&lt;/ol&gt;</code></pre></div></div></div>
-                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c4">Tablas y formularios</button></h2><div id="c4" class="accordion-collapse collapse" data-bs-parent="#acordeonHtml"><div class="accordion-body"><pre><code class="language-html">&lt;table&gt;
-  &lt;tr&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Edad&lt;/th&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
+  &lt;li&gt;Paso 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                    </div>
+                </div>
+                <div>
+                    <h3>Lista no ordenada</h3>
+                    <div class="code-wrap">
+                        <span class="code-lang">HTML</span>
+                        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Elemento A&lt;/li&gt;
+  &lt;li&gt;Elemento B&lt;/li&gt;
+  &lt;li&gt;Elemento C&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-&lt;form&gt;
-  &lt;input type="text" placeholder="Nombre"&gt;
-  &lt;input type="email" placeholder="Correo"&gt;
-  &lt;button&gt;Enviar&lt;/button&gt;
-&lt;/form&gt;</code></pre></div></div></div>
-                </div>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Tipos de input</h2>
-                <p>Los formularios permiten capturar información del usuario. Algunos tipos comunes son:</p>
-                <div class="row row-cols-2 row-cols-md-3 g-3">
-                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">text</div></div></div>
-                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">email</div></div></div>
-                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">password</div></div></div>
-                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">number</div></div></div>
-                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">date</div></div></div>
-                    <div class="col"><div class="card border-secondary h-100"><div class="card-body">checkbox</div></div></div>
-                </div>
-            </div></div>
-            <div class="card subtopic-card"><div class="card-body">
-                <h2 class="section-title">Etiquetas semánticas</h2>
-                <p>Las etiquetas semánticas describen el propósito del contenido y mejoran la organización y accesibilidad.</p>
-                <pre><code class="language-html">&lt;header&gt;Encabezado del sitio&lt;/header&gt;
+        <!-- 6 -->
+        <div class="edu-card">
+            <h2><span class="num">6</span> Tablas</h2>
+            <div class="code-wrap">
+                <span class="code-lang">HTML</span>
+                <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Luis&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="edu-card">
+            <h2><span class="num">7</span> Formularios e inputs</h2>
+            <div class="code-wrap">
+                <span class="code-lang">HTML</span>
+                <pre><code>&lt;form action="/enviar" method="POST"&gt;
+  &lt;input type="text"     placeholder="Nombre"&gt;
+  &lt;input type="email"    placeholder="Correo"&gt;
+  &lt;input type="password" placeholder="Contraseña"&gt;
+  &lt;input type="number"   placeholder="Edad"&gt;
+  &lt;input type="date"&gt;
+  &lt;input type="checkbox"&gt; Acepto los términos
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <h3>Tipos de input comunes</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">text</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">email</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">password</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">number</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">date</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">checkbox</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">radio</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">file</span>
+                <span style="background:var(--cream);border:1px solid var(--rule);border-radius:.4rem;padding:.3rem .75rem;font-family:'Fira Code',monospace;font-size:.82rem;">submit</span>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="edu-card">
+            <h2><span class="num">8</span> Etiquetas semánticas</h2>
+            <p>Las etiquetas semánticas describen el <em>propósito</em> del contenido y mejoran la organización, accesibilidad y SEO.</p>
+            <div class="code-wrap">
+                <span class="code-lang">HTML</span>
+                <pre><code>&lt;header&gt;Encabezado del sitio&lt;/header&gt;
 &lt;nav&gt;Menú de navegación&lt;/nav&gt;
-&lt;section&gt;Sección de contenido&lt;/section&gt;
-&lt;article&gt;Artículo independiente&lt;/article&gt;
+&lt;section&gt;
+  &lt;article&gt;Artículo independiente&lt;/article&gt;
+&lt;/section&gt;
+&lt;aside&gt;Contenido relacionado&lt;/aside&gt;
 &lt;footer&gt;Pie de página&lt;/footer&gt;</code></pre>
-                <div class="example-box p-3">Usar semántica ayuda a que el código sea más claro para los desarrolladores, los navegadores y los lectores de pantalla.</div>
-            </div></div>
+            </div>
+            <div class="callout good">
+                <span class="callout-icon"></span>
+                <div>Usar semántica hace el código más claro para los desarrolladores, los navegadores y los lectores de pantalla (accesibilidad).</div>
+            </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card info-card mb-4"><div class="card-body">
-                <h4>Buenas prácticas en HTML</h4>
-                <ul class="mb-0">
-                    <li>Usar etiquetas correctas según el contenido.</li>
-                    <li>Agregar <code>alt</code> en las imágenes.</li>
-                    <li>Indentar el código.</li>
-                    <li>Separar estructura y estilos.</li>
-                </ul>
-            </div></div>
-            <div class="card info-card mb-4"><div class="card-body">
-                <h4>Ejemplo práctico</h4>
-                <pre><code class="language-html">&lt;section&gt;
-  &lt;h2&gt;Noticias&lt;/h2&gt;
-  &lt;article&gt;
-    &lt;h3&gt;Nuevo curso&lt;/h3&gt;
-    &lt;p&gt;Se abrió matrícula.&lt;/p&gt;
-  &lt;/article&gt;
-&lt;/section&gt;</code></pre>
-            </div></div>
-            <div class="card info-card"><img src="img/web-logo.png" class="card-img-top p-4" alt="HTML y web" style="max-height:250px; object-fit:contain;"><div class="card-body"><p class="mb-0">HTML es la base estructural de cualquier sitio web.</p></div></div>
-        </div>
-    </div>
-</main>
 
-<footer class="text-white py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-            <strong>Proyecto educativo de Programación IV</strong><br>
+        <!-- Buenas prácticas -->
+        <div class="edu-card" style="border-left:4px solid var(--sage);">
+            <h2>Buenas prácticas en HTML</h2>
+            <ul>
+                <li>Usar etiquetas correctas según el contenido (semántica).</li>
+                <li>Agregar <code>alt</code> en todas las imágenes.</li>
+                <li>Indentar el código para mejorar la legibilidad.</li>
+                <li>Separar estructura (HTML) de estilos (CSS).</li>
+                <li>Validar el HTML con el <a href="https://validator.w3.org" target="_blank">validador W3C</a>.</li>
+            </ul>
         </div>
-        <div>
-            Sitio web desarrollado con HTML5, CSS y Bootstrap.
+
+        <div style="display:flex;justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:.75rem;">
+            <a href="fundamentos.html" class="btn-edu btn-ghost-edu" style="color:var(--ink);background:var(--cream);border:1px solid var(--rule);">← Fundamentos</a>
+            <a href="css.html" class="btn-edu btn-primary-edu">Siguiente: CSS →</a>
         </div>
-    </div>
+
+    </main>
+</div>
+
+<footer>
+    <div><strong>Programación IV — Tarea Continua</strong></div>
+    <div>Sebastián Gómez · HTML5, CSS3, JavaScript</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/nav.js"></script>
 </body>
 </html>

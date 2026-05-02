@@ -3,166 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sitio educativo de Programación IV sobre fundamentos web, HTML, CSS y backend.">
     <title>Inicio | Programación IV</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="img/web-logo.png" alt="Logo" height="30" class="me-2">
-            Programación IV
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="fundamentos.html">Fundamentos</a></li>
-                <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
-                <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
-                <li class="nav-item"><a class="nav-link" href="backend.html">Backend</a></li>
-                <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<body>
 
-<main class="container my-4 flex-grow-1">
-    <section class="hero mb-4">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-8">
-                <span class="badge rounded-pill badge-soft mb-3">Tarea continua</span>
-                <h1 class="display-5 fw-bold">Sitio web educativo de Programación IV</h1>
-                <p class="lead mb-3">Este proyecto resume los temas principales del curso: fundamentos de Internet y la Web, HTML, CSS y elementos básicos del backend. Cada sección incluye conceptos, explicaciones y ejemplos prácticos.</p>
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="fundamentos.html" class="btn btn-light btn-lg">Empezar</a>
-                    <a href="#temas" class="btn btn-outline-light btn-lg">Ver temas</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="topbar" id="topbar"></header>
 
-    <section class="row g-4 mb-4">
-        <div class="col-12">
-            <div id="carouselInicio" class="carousel slide shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/tron.jpg" class="d-block w-100" style="height: 380px; object-fit: cover;" alt="Tecnología web">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/tron2.jpg" class="d-block w-100" style="height: 380px; object-fit: cover; object-position: center 35%;" alt="Programación">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-    </section>
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar"></aside>
 
-    <section id="temas" class="mb-4">
-        <h2 class="section-title mb-4">Temas del sitio</h2>
-        <div class="row g-4">
-            <div class="col-md-6 col-xl-3">
-                <div class="card topic-card h-100">
-                    <div class="card-body">
-                        <span class="badge text-bg-primary mb-2">Tema 1</span>
-                        <h4><i class="fa-solid fa-earth-americas me-2"></i>Fundamentos</h4>
-                        <p>Conceptos básicos de Internet, Web, protocolo HTTP, DNS, IP, modelo OSI y seguridad.</p>
-                        <a href="fundamentos.html" class="btn btn-outline-primary">Ir al tema</a>
-                    </div>
-                </div>
+    <main class="content">
+        <section class="hero-index">
+            <span style="display:inline-block;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .8rem;border-radius:99px;margin-bottom:1rem;">Tarea Continua · 2026</span>
+            <h1>Sitio Web Educativo<br>de Programación IV</h1>
+            <p class="lead">Repositorio de los temas del curso: fundamentos de Internet, HTML, CSS, backend con Spring Boot y JavaScript. Cada sección incluye explicaciones, ejemplos y fragmentos de código.</p>
+            <div class="hero-ctas">
+                <a href="fundamentos.html" class="btn-edu btn-primary-edu">▶ Empezar</a>
+                <a href="#temas" class="btn-edu btn-ghost-edu">Ver todos los temas</a>
             </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card topic-card h-100">
-                    <div class="card-body">
-                        <span class="badge text-bg-danger mb-2">Tema 2</span>
-                        <h4><i class="fa-brands fa-html5 me-2"></i>HTML</h4>
-                        <p>Estructura de documentos, etiquetas principales, formularios, tablas y semántica.</p>
-                        <a href="html.html" class="btn btn-outline-danger">Ir al tema</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card topic-card h-100">
-                    <div class="card-body">
-                        <span class="badge text-bg-info mb-2">Tema 3</span>
-                        <h4><i class="fa-brands fa-css3-alt me-2"></i>CSS</h4>
-                        <p>Diseño visual, selectores, box model, display, position, flexbox y buenas prácticas.</p>
-                        <a href="css.html" class="btn btn-outline-info">Ir al tema</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card topic-card h-100">
-                    <div class="card-body">
-                        <span class="badge text-bg-success mb-2">Tema 4</span>
-                        <h4><i class="fa-solid fa-server me-2"></i>Backend</h4>
-                        <p>Cliente-servidor, request/response, Spring Boot, controladores, Thymeleaf, cookies y sesiones.</p>
-                        <a href="backend.html" class="btn btn-outline-success">Ir al tema</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card topic-card h-100">
-                    <div class="card-body">
-                        <span class="badge text-bg-warning mb-2">Tema 5</span>
-                        <h4><i class="fa-brands fa-js me-2"></i>JavaScript</h4>
-                        <p>Eventos, DOM, interacción y un juego tipo tablero desarrollado con JavaScript puro.</p>
-                        <a href="javascript.html" class="btn btn-outline-warning">Ir al tema</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="row g-4">
-        <div class="col-lg-7">
-            <div class="card info-card h-100">
-                <div class="card-body">
-                    <h3 class="section-title mb-3">¿Qué ofrece este sitio?</h3>
-                    <p>La idea del sitio es servir como material de estudio y repaso durante el curso. Cada página está organizada con una introducción, explicación breve, ejemplos y fragmentos de código cuando ayudan a comprender mejor el tema.</p>
-                    <div class="example-box p-3">
-                        <strong>Ejemplo:</strong> en la sección de HTML se muestra la estructura básica de un documento; en la sección de CSS se enseña cómo aplicar estilos externos; y en backend se incluyen ejemplos sencillos con Spring Boot y Thymeleaf.
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <div class="card info-card h-100">
-                <div class="card-body">
-                    <h3 class="section-title mb-3">Tecnologías usadas</h3>
-                    <ul class="mb-0">
-                        <li><strong>HTML5</strong> para la estructura.</li>
-                        <li><strong>CSS3</strong> para el diseño y estilos personalizados.</li>
-                        <li><strong>Bootstrap 5</strong> para componentes y diseño responsive.</li>
-                        <li><strong>Font Awesome</strong> para íconos de apoyo visual.</li>
-                        <li><strong>JavaScript</strong> para interactividad y el juego tipo tablero.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
 
-<footer class="text-white py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-            <strong>Proyecto educativo de Programación IV</strong><br>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+            <div style="flex:1;min-width:140px;background:#fff;border:1px solid var(--rule);border-radius:.75rem;padding:1.2rem;box-shadow:var(--shadow-sm);text-align:center;">
+                <div style="font-family:'Merriweather',serif;font-size:2rem;font-weight:700;color:var(--accent);">5</div>
+                <div style="font-size:.83rem;color:var(--ink-muted);margin-top:.15rem;">Temas</div>
+            </div>
+            <div style="flex:1;min-width:140px;background:#fff;border:1px solid var(--rule);border-radius:.75rem;padding:1.2rem;box-shadow:var(--shadow-sm);text-align:center;">
+                <div style="font-family:'Merriweather',serif;font-size:2rem;font-weight:700;color:var(--teal);">HTML5</div>
+                <div style="font-size:.83rem;color:var(--ink-muted);margin-top:.15rem;">Bootstrap</div>
+            </div>
+            <div style="flex:1;min-width:140px;background:#fff;border:1px solid var(--rule);border-radius:.75rem;padding:1.2rem;box-shadow:var(--shadow-sm);text-align:center;">
+                <div style="font-family:'Merriweather',serif;font-size:2rem;font-weight:700;color:var(--sage);">JS</div>
+                <div style="font-size:.83rem;color:var(--ink-muted);margin-top:.15rem;">+ Juego Pac-Man</div>
+            </div>
         </div>
-        <div>
-            Sitio web desarrollado con HTML5, CSS y Bootstrap.
+
+        <!-- Temas -->
+        <h2 class="section-heading" id="temas">Temas del sitio</h2>
+        <div class="topic-grid">
+            <a class="topic-card" href="fundamentos.html">
+                <div class="tc-num">01</div>
+                <h3>Fundamentos de Internet y la Web</h3>
+                <p>Internet, World Wide Web, modelo OSI, IP, DNS, HTTP/HTTPS, SSL/TLS y peticiones web.</p>
+                <span class="tc-link">Ir al tema →</span>
+            </a>
+            <a class="topic-card" href="html.html">
+                <div class="tc-num">02</div>
+                <h3>HTML</h3>
+                <p>Estructura de documentos, etiquetas principales, formularios, tablas y etiquetas semánticas.</p>
+                <span class="tc-link">Ir al tema →</span>
+            </a>
+            <a class="topic-card" href="css.html">
+                <div class="tc-num">03</div>
+                <h3>CSS</h3>
+                <p>Selectores, box model, display, position, flexbox, propiedades principales y buenas prácticas.</p>
+                <span class="tc-link">Ir al tema →</span>
+            </a>
+            <a class="topic-card" href="backend.html">
+                <div class="tc-num">04</div>
+                <h3>Elementos del Backend</h3>
+                <p>Cliente-servidor, HTTP request/response, Spring Boot, Thymeleaf, cookies y sesiones.</p>
+                <span class="tc-link">Ir al tema →</span>
+            </a>
+            <a class="topic-card" href="javascript.html">
+                <div class="tc-num">05</div>
+                <h3>JavaScript</h3>
+                <p>Eventos del DOM, interactividad y un juego tipo tablero inspirado en Pac-Man.</p>
+                <span class="tc-link">Ir al tema →</span>
+            </a>
         </div>
-    </div>
+
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+            <div class="edu-card">
+                <h2>¿Qué ofrece este sitio?</h2>
+                <p>El sitio sirve como material de estudio y repaso durante el curso. Cada página está organizada con una introducción, explicación breve, ejemplos y fragmentos de código cuando ayudan a comprender mejor el tema.</p>
+                <div class="callout tip">
+                    <span class="callout-icon"></span>
+                    <div><strong>Por ejemplo:</strong> en HTML se muestra la estructura básica de un documento; en CSS se enseña cómo aplicar estilos externos; y en backend se incluyen ejemplos con Spring Boot y Thymeleaf.</div>
+                </div>
+            </div>
+            <div class="edu-card">
+                <h2>Tecnologías usadas</h2>
+                <ul>
+                    <li><strong>HTML5</strong> — estructura del contenido.</li>
+                    <li><strong>CSS3</strong> — diseño y estilos personalizados.</li>
+                    <li><strong>Bootstrap 5</strong> — componentes y diseño responsive.</li>
+                    <li><strong>Font Awesome</strong> — íconos de apoyo visual.</li>
+                    <li><strong>JavaScript</strong> — interactividad y juego tipo tablero.</li>
+                    <li><strong>Google Fonts</strong> — tipografía Merriweather &amp; Source Sans 3.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <div><strong>Programación IV — Tarea Continua</strong></div>
+    <div>Desarrollado con HTML5, CSS3 y JavaScript · Sebastián Gómez</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/nav.js"></script>
 </body>
 </html>

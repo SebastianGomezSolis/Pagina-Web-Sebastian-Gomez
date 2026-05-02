@@ -3,154 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sitio educativo de Programación IV sobre fundamentos web, HTML, CSS y backend.">
-    <title>CSS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>CSS | Programación IV</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="img/web-logo.png" alt="Logo" height="30" class="me-2">
-            Programación IV
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="fundamentos.html">Fundamentos</a></li>
-                <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
-                <li class="nav-item"><a class="nav-link active" href="css.html">CSS</a></li>
-                <li class="nav-item"><a class="nav-link" href="backend.html">Backend</a></li>
-                <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
-            </ul>
+<header class="topbar" id="topbar"></header>
+
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="content">
+
+        <nav class="breadcrumb-edu">
+            <a href="index.html">Inicio</a>
+            <span class="sep">›</span>
+            <span class="cur">CSS</span>
+        </nav>
+
+        <header class="topic-header">
+            <span class="topic-badge">Tema 3 de 5</span>
+            <h1>CSS</h1>
+            <p class="lead">CSS (<em>Cascading Style Sheets</em>) permite separar el diseño visual del contenido HTML, controlando colores, tipografía, espaciado, posición y mucho más.</p>
+            <div class="meta">
+                <span>Selectores</span>
+                <span>Box Model</span>
+                <span>Flexbox</span>
+                <span>Display &amp; Position</span>
+            </div>
+        </header>
+
+        <!-- 1 -->
+        <div class="edu-card">
+            <h2><span class="num">1</span> ¿Qué es CSS?</h2>
+            <p>CSS significa <em>Cascading Style Sheets</em>. Permite separar el diseño visual del contenido HTML para mantener un código más ordenado y reutilizable.</p>
         </div>
-    </div>
-</nav>
 
-<main class="container my-4 flex-grow-1">
-    <section class="page-hero mb-4">
-        <span class="badge rounded-pill badge-soft mb-3">Tema 3</span>
-        <h1 class="fw-bold">CSS</h1>
-        <p class="mb-0">CSS se usa para dar color, tamaño, posición y estilo visual a las páginas web.</p>
-    </section>
-    <div class="row g-4">
-        <div class="col-lg-8">
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">¿Qué es CSS?</h2>
-                <p>CSS significa <em>Cascading Style Sheets</em>. Permite separar el diseño visual del contenido HTML para mantener un código más ordenado y reutilizable.</p>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Formas de aplicar CSS</h2>
-                <h5>1. En línea</h5>
-                <pre class="code-block"><code>&lt;p style="color: red;"&gt;Texto rojo&lt;/p&gt;</code></pre>
-                <h5>2. Interno</h5>
-                <pre class="code-block"><code>&lt;style&gt;
+        <!-- 2 -->
+        <div class="edu-card">
+            <h2><span class="num">2</span> Formas de aplicar CSS</h2>
+            <h3>1. En línea (inline)</h3>
+            <div class="code-wrap"><span class="code-lang">HTML</span>
+                <pre><code>&lt;p style="color: red;"&gt;Texto rojo&lt;/p&gt;</code></pre>
+            </div>
+            <h3>2. Interno (internal)</h3>
+            <div class="code-wrap"><span class="code-lang">HTML</span>
+                <pre><code>&lt;style&gt;
   p { color: blue; }
 &lt;/style&gt;</code></pre>
-                <h5>3. Externo</h5>
-                <pre class="code-block"><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
-                <div class="example-box p-3">La forma recomendada para proyectos grandes es el CSS externo, porque facilita la organización y el mantenimiento.</div>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Selectores principales</h2>
-                <pre class="code-block"><code>p { color: black; }          /* selector por etiqueta */
-.destacado { color: blue; }   /* selector por clase */
-#titulo { font-size: 2rem; }  /* selector por id */
-section p { margin: 10px; }   /* selector descendente */
-a:hover { color: red; }       /* pseudo-clase */
-p::first-letter { font-size: 2rem; } /* pseudo-elemento */</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Propiedades principales</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th>Propiedad</th><th>Uso</th><th>Ejemplo</th></tr></thead>
-                        <tbody>
-                        <tr><td>color</td><td>Color del texto</td><td><code>color: navy;</code></td></tr>
-                        <tr><td>background</td><td>Fondo</td><td><code>background: #f1f5f9;</code></td></tr>
-                        <tr><td>font-family</td><td>Tipo de letra</td><td><code>font-family: Arial;</code></td></tr>
-                        <tr><td>font-size</td><td>Tamaño de letra</td><td><code>font-size: 18px;</code></td></tr>
-                        <tr><td>margin</td><td>Espacio externo</td><td><code>margin: 20px;</code></td></tr>
-                        <tr><td>padding</td><td>Espacio interno</td><td><code>padding: 12px;</code></td></tr>
-                        <tr><td>border</td><td>Borde</td><td><code>border: 1px solid black;</code></td></tr>
-                        <tr><td>width / height</td><td>Tamaño</td><td><code>width: 100%;</code></td></tr>
-                        </tbody>
-                    </table>
+            </div>
+            <h3>3. Externo (external) recomendado</h3>
+            <div class="code-wrap"><span class="code-lang">HTML</span>
+                <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+            </div>
+            <div class="callout tip">
+                <span class="callout-icon"></span>
+                <div>La forma recomendada para proyectos grandes es el <strong>CSS externo</strong>, porque facilita la organización y el mantenimiento del código.</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="edu-card">
+            <h2><span class="num">3</span> Selectores principales</h2>
+            <div class="code-wrap"><span class="code-lang">CSS</span>
+                <pre><code>p { color: black; }              /* selector por etiqueta    */
+.destacado { color: blue; }      /* selector por clase       */
+#titulo { font-size: 2rem; }     /* selector por id          */
+section p { margin: 10px; }      /* selector descendente     */
+a:hover { color: red; }          /* pseudo-clase             */
+p::first-letter { font-size: 2rem; } /* pseudo-elemento      */</code></pre>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="edu-card">
+            <h2><span class="num">4</span> Propiedades principales</h2>
+            <div class="edu-table-wrap">
+                <table class="edu-table">
+                    <thead>
+                    <tr><th>Propiedad</th><th>Uso</th><th>Ejemplo</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td><code>color</code></td><td>Color del texto</td><td><code>color: navy;</code></td></tr>
+                    <tr><td><code>background</code></td><td>Fondo del elemento</td><td><code>background: #f1f5f9;</code></td></tr>
+                    <tr><td><code>font-family</code></td><td>Tipo de letra</td><td><code>font-family: Arial;</code></td></tr>
+                    <tr><td><code>font-size</code></td><td>Tamaño de letra</td><td><code>font-size: 18px;</code></td></tr>
+                    <tr><td><code>margin</code></td><td>Espacio externo</td><td><code>margin: 20px;</code></td></tr>
+                    <tr><td><code>padding</code></td><td>Espacio interno</td><td><code>padding: 12px;</code></td></tr>
+                    <tr><td><code>border</code></td><td>Borde</td><td><code>border: 1px solid black;</code></td></tr>
+                    <tr><td><code>width / height</code></td><td>Dimensiones</td><td><code>width: 100%;</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 5 Box Model -->
+        <div class="edu-card">
+            <h2><span class="num">5</span> Modelo de caja (Box Model)</h2>
+            <p>Todo elemento HTML puede verse como una caja compuesta por cuatro áreas: <strong>contenido</strong>, <strong>padding</strong>, <strong>borde</strong> y <strong>margin</strong>.</p>
+
+            <!-- Visual Box Model -->
+            <div style="display:flex;justify-content:center;margin:1.5rem 0;">
+                <div style="background:#d4a017;padding:20px;border-radius:.5rem;text-align:center;font-size:.75rem;font-weight:700;color:var(--ink);min-width:280px;">
+                    <div style="margin-bottom:.3rem;">MARGIN</div>
+                    <div style="background:#c0392b;padding:16px;border-radius:.4rem;color:#fff;">
+                        <div style="margin-bottom:.3rem;">BORDER</div>
+                        <div style="background:#1a6b72;padding:14px;border-radius:.3rem;">
+                            <div style="margin-bottom:.3rem;color:#e0f2f3;">PADDING</div>
+                            <div style="background:#fff;color:var(--ink);padding:10px;border-radius:.25rem;">CONTENIDO</div>
+                        </div>
+                    </div>
                 </div>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Box Model</h2>
-                <p>Todo elemento HTML puede verse como una caja compuesta por: <strong>contenido</strong>, <strong>padding</strong>, <strong>borde</strong> y <strong>margin</strong>.</p>
-                <pre class="code-block"><code>.caja {
-  width: 200px;
-  padding: 20px;
-  border: 2px solid #000;
-  margin: 15px;
+            </div>
+
+            <div class="code-wrap"><span class="code-lang">CSS</span>
+                <pre><code>.caja {
+  width: 200px;      /* ancho del contenido */
+  padding: 20px;     /* espacio interior     */
+  border: 2px solid #000; /* borde          */
+  margin: 15px;      /* espacio exterior     */
 }</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Display y Position</h2>
-                <p><strong>display</strong> define cómo se comporta un elemento en la página: <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>flex</code>, etc.</p>
-                <p><strong>position</strong> controla su ubicación: <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code> y <code>sticky</code>.</p>
-            </div></div>
-            <div class="card subtopic-card"><div class="card-body">
-                <h2 class="section-title">Flexbox y buenas prácticas</h2>
-                <pre class="code-block"><code>.contenedor {
+            </div>
+        </div>
+
+        <!-- 6 Display -->
+        <div class="edu-card">
+            <h2><span class="num">6</span> Display</h2>
+            <p><code>display</code> define cómo se comporta un elemento en el flujo de la página.</p>
+            <div class="edu-table-wrap">
+                <table class="edu-table">
+                    <thead><tr><th>Valor</th><th>Comportamiento</th></tr></thead>
+                    <tbody>
+                    <tr><td><code>block</code></td><td>Ocupa todo el ancho disponible; empieza en línea nueva.</td></tr>
+                    <tr><td><code>inline</code></td><td>Solo ocupa el espacio de su contenido; no acepta width/height.</td></tr>
+                    <tr><td><code>inline-block</code></td><td>Como inline pero acepta dimensiones.</td></tr>
+                    <tr><td><code>flex</code></td><td>Activa el modelo Flexbox en el contenedor.</td></tr>
+                    <tr><td><code>none</code></td><td>Oculta el elemento (no ocupa espacio).</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 7 Position -->
+        <div class="edu-card">
+            <h2><span class="num">7</span> Position</h2>
+            <p><code>position</code> controla la ubicación de un elemento respecto a su contenedor o la ventana.</p>
+            <div class="edu-table-wrap">
+                <table class="edu-table">
+                    <thead><tr><th>Valor</th><th>Descripción</th></tr></thead>
+                    <tbody>
+                    <tr><td><code>static</code></td><td>Posición normal en el flujo (por defecto).</td></tr>
+                    <tr><td><code>relative</code></td><td>Relativa a su posición original; desplaza sin salir del flujo.</td></tr>
+                    <tr><td><code>absolute</code></td><td>Relativa al ancestro con <code>position</code> distinto de <code>static</code>.</td></tr>
+                    <tr><td><code>fixed</code></td><td>Fija en la ventana del navegador; no se mueve al hacer scroll.</td></tr>
+                    <tr><td><code>sticky</code></td><td>Combina <code>relative</code> y <code>fixed</code>; se pega al scroll.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 8 Flexbox -->
+        <div class="edu-card">
+            <h2><span class="num">8</span> Flexbox (introducción)</h2>
+            <p>Flexbox es un modelo de diseño que facilita alinear y distribuir elementos dentro de un contenedor.</p>
+            <div class="code-wrap"><span class="code-lang">CSS</span>
+                <pre><code>.contenedor {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  /* eje principal (horizontal) */
+  align-items: center;      /* eje secundario (vertical)  */
+  flex-wrap: wrap;          /* permite que los items se envuelvan */
   gap: 1rem;
 }</code></pre>
-                <ul>
-                    <li>Usar CSS externo.</li>
-                    <li>Reutilizar clases.</li>
-                    <li>Mantener nombres claros.</li>
-                    <li>No repetir estilos innecesariamente.</li>
-                    <li>Combinar CSS propio con Bootstrap cuando sea útil.</li>
-                </ul>
-            </div></div>
+            </div>
+            <div class="callout tip">
+                <span class="callout-icon"></span>
+                <div><code>justify-content</code> controla el eje horizontal y <code>align-items</code> el vertical (cuando <code>flex-direction: row</code>, que es el valor por defecto).</div>
+            </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card info-card mb-4"><div class="card-body">
-                <h4>Mini ejemplo visual</h4>
-                <div class="p-3 rounded-4 border border-2 bg-light text-center">
-                    <strong>Caja con estilo</strong>
-                    <p class="mb-0 mt-2">Bootstrap y CSS pueden trabajar juntos.</p>
-                </div>
-            </div></div>
-            <div class="card info-card mb-4"><div class="card-body">
-                <h4>Ejemplo de clase</h4>
-                <pre class="code-block mb-0"><code>.boton-principal {
-  background: royalblue;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-}</code></pre>
-            </div></div>
-            <div class="card info-card"><div class="card-body">
-                <h4>Importancia de CSS</h4>
-                <p class="mb-0">Sin CSS las páginas funcionarían, pero se verían muy simples y sin diseño atractivo.</p>
-            </div></div>
-        </div>
-    </div>
-</main>
 
-<footer class="text-white py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-            <strong>Proyecto educativo de Programación IV</strong><br>
+        <!-- 9 Buenas prácticas -->
+        <div class="edu-card" style="border-left:4px solid var(--sage);">
+            <h2>Buenas prácticas de CSS</h2>
+            <ul>
+                <li>Usar <strong>CSS externo</strong> para proyectos de cualquier tamaño.</li>
+                <li><strong>Reutilizar clases</strong> en lugar de repetir estilos.</li>
+                <li>Mantener <strong>nombres descriptivos</strong> para las clases.</li>
+                <li>No repetir propiedades innecesariamente.</li>
+                <li>Combinar CSS propio con Bootstrap cuando sea útil.</li>
+                <li>Usar <strong>variables CSS</strong> (<code>:root { --color: … }</code>) para colores y fuentes recurrentes.</li>
+            </ul>
         </div>
-        <div>
-            Sitio web desarrollado con HTML5, CSS y Bootstrap.
+
+        <div style="display:flex;justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:.75rem;">
+            <a href="html.html" class="btn-edu btn-ghost-edu" style="color:var(--ink);background:var(--cream);border:1px solid var(--rule);">← HTML</a>
+            <a href="backend.html" class="btn-edu btn-primary-edu">Siguiente: Backend →</a>
         </div>
-    </div>
+
+    </main>
+</div>
+
+<footer>
+    <div><strong>Programación IV — Tarea Continua</strong></div>
+    <div>Sebastián Gómez · HTML5, CSS3, JavaScript</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/nav.js"></script>
 </body>
 </html>

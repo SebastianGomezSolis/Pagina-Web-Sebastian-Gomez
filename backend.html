@@ -3,91 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sitio educativo de Programación IV sobre fundamentos web, HTML, CSS y backend.">
-    <title>Elementos del backend</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Backend | Programación IV</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="img/web-logo.png" alt="Logo" height="30" class="me-2">
-            Programación IV
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="fundamentos.html">Fundamentos</a></li>
-                <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
-                <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
-                <li class="nav-item"><a class="nav-link active" href="backend.html">Backend</a></li>
-                <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
-            </ul>
+<header class="topbar" id="topbar"></header>
+
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="content">
+
+        <nav class="breadcrumb-edu">
+            <a href="index.html">Inicio</a>
+            <span class="sep">›</span>
+            <span class="cur">Elementos del Backend</span>
+        </nav>
+
+        <header class="topic-header">
+            <span class="topic-badge">Tema 4 de 5</span>
+            <h1>Elementos del Backend</h1>
+            <p class="lead">El backend es la parte de una aplicación que procesa datos, maneja la lógica del negocio y responde a las solicitudes del cliente. Aquí se trabaja con Spring Boot, Thymeleaf, cookies y sesiones.</p>
+            <div class="meta">
+                <span>Java / Spring Boot</span>
+                <span>Thymeleaf</span>
+                <span>Cookies &amp; Sesiones</span>
+                <span>HTTP Request/Response</span>
+            </div>
+        </header>
+
+        <!-- 1 -->
+        <div class="edu-card">
+            <h2><span class="num">1</span> Cliente vs. Servidor</h2>
+            <p>El <strong>cliente</strong> es quien solicita un recurso, normalmente el navegador. El <strong>servidor</strong> recibe la solicitud, la procesa y envía una respuesta.</p>
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin:1.25rem 0;">
+                <div style="background:var(--teal-lt);border:1px solid rgba(26,107,114,.2);border-radius:.6rem;padding:1rem;text-align:center;">
+                    <strong>Cliente</strong>
+                    <p style="font-size:.83rem;color:var(--ink-muted);margin:0.3rem 0 0;">Navegador web — envía peticiones HTTP</p>
+                </div>
+                <div style="font-size:1.5rem;text-align:center;color:var(--ink-muted);">⇄</div>
+                <div style="background:var(--accent-lt);border:1px solid rgba(192,57,43,.2);border-radius:.6rem;padding:1rem;text-align:center;">
+                    <strong>Servidor</strong>
+                    <p style="font-size:.83rem;color:var(--ink-muted);margin:0.3rem 0 0;">Spring Boot — procesa y responde</p>
+                </div>
+            </div>
+            <div class="callout info">
+                <span class="callout-icon"></span>
+                <div>Ejemplo: un usuario abre una página de productos; el navegador pide la información y el servidor devuelve HTML o JSON.</div>
+            </div>
         </div>
-    </div>
-</nav>
 
-<main class="container my-4 flex-grow-1">
-    <section class="page-hero mb-4">
-        <span class="badge rounded-pill badge-soft mb-3">Tema 4</span>
-        <h1 class="fw-bold">Elementos del backend</h1>
-        <p class="mb-0">El backend es la parte de una aplicación que procesa datos, maneja la lógica del negocio y responde a las solicitudes del cliente.</p>
-    </section>
-    <div class="row g-4">
-        <div class="col-lg-8">
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Cliente vs servidor</h2>
-                <p>El <strong>cliente</strong> es quien solicita un recurso, normalmente el navegador. El <strong>servidor</strong> recibe la solicitud, la procesa y envía una respuesta.</p>
-                <div class="example-box p-3">Ejemplo: un usuario abre una página de productos; el navegador pide la información y el servidor devuelve HTML o JSON.</div>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">HTTP request y HTTP response</h2>
-                <p><strong>Request:</strong> es la petición que envía el cliente al servidor.</p>
-                <p><strong>Response:</strong> es la respuesta del servidor con datos, estado y encabezados.</p>
-                <pre class="code-block"><code>Request:
+        <!-- 2 -->
+        <div class="edu-card">
+            <h2><span class="num">2</span> HTTP Request y HTTP Response</h2>
+            <p><strong>Request:</strong> petición que envía el cliente al servidor.</p>
+            <p><strong>Response:</strong> respuesta del servidor con datos, estado y encabezados.</p>
+            <div class="code-wrap"><span class="code-lang">HTTP</span>
+                <pre><code>/* Request */
 GET /usuarios HTTP/1.1
 Host: localhost:8080
+Accept: application/json
 
-Response:
+/* Response */
 HTTP/1.1 200 OK
-Content-Type: application/json</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Método GET y POST</h2>
-                <ul>
-                    <li><strong>GET:</strong> solicita información al servidor.</li>
-                    <li><strong>POST:</strong> envía información nueva para ser procesada o guardada.</li>
-                </ul>
-                <pre class="code-block"><code>@GetMapping("/saludo")
+Content-Type: application/json
+
+[{"id":1,"nombre":"Ana"}]</code></pre>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="edu-card">
+            <h2><span class="num">3</span> Métodos GET y POST</h2>
+            <ul>
+                <li><strong>GET:</strong> solicita información al servidor (no modifica datos).</li>
+                <li><strong>POST:</strong> envía información nueva para ser procesada o guardada.</li>
+            </ul>
+            <div class="code-wrap"><span class="code-lang">Java</span>
+                <pre><code>@GetMapping("/saludo")
 public String saludo() {
     return "Hola";
 }
 
 @PostMapping("/guardar")
-public String guardar() {
+public String guardar(@RequestBody Usuario u) {
+    // guardar en base de datos
     return "Guardado";
 }</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Spring Boot</h2>
-                <p>Spring Boot es un framework de Java que facilita la creación de aplicaciones web y APIs. Ayuda a iniciar proyectos rápidamente y reduce mucha configuración manual.</p>
-                <pre class="code-block"><code>@SpringBootApplication
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="edu-card">
+            <h2><span class="num">4</span> Spring Boot</h2>
+            <p>Spring Boot es un framework de Java que facilita la creación de aplicaciones web y APIs. Reduce mucha configuración manual y permite arrancar proyectos rápidamente.</p>
+            <div class="code-wrap"><span class="code-lang">Java</span>
+                <pre><code>@SpringBootApplication
 public class Aplicacion {
     public static void main(String[] args) {
         SpringApplication.run(Aplicacion.class, args);
     }
 }</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Inyección de dependencias con @Autowired</h2>
-                <p>La inyección de dependencias permite que Spring cree y entregue objetos automáticamente a otras clases que los necesitan.</p>
-                <pre class="code-block"><code>@Service
+            </div>
+            <div class="callout tip">
+                <span class="callout-icon"></span>
+                <div>Spring Boot se usa mucho porque permite desarrollar aplicaciones Java de forma más rápida y organizada que Spring tradicional.</div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="edu-card">
+            <h2><span class="num">5</span> Inyección de dependencias con <code>@Autowired</code></h2>
+            <p>La inyección de dependencias permite que Spring cree y entregue objetos automáticamente a otras clases que los necesitan, sin crear instancias manualmente.</p>
+            <div class="code-wrap"><span class="code-lang">Java</span>
+                <pre><code>@Service
 public class UsuarioService {
     public String obtenerMensaje() {
         return "Servicio activo";
@@ -98,84 +128,127 @@ public class UsuarioService {
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
+
+    @GetMapping("/mensaje")
+    public String mensaje(Model m) {
+        m.addAttribute("msg", usuarioService.obtenerMensaje());
+        return "mensaje";
+    }
 }</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">@Controller y @RestController</h2>
-                <p><strong>@Controller</strong> se usa cuando se devuelven vistas, por ejemplo páginas Thymeleaf.</p>
-                <p><strong>@RestController</strong> se usa cuando se devuelven datos como JSON.</p>
-                <pre class="code-block"><code>@Controller
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="edu-card">
+            <h2><span class="num">6</span> <code>@Controller</code> y <code>@RestController</code></h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div>
+                    <h3><code>@Controller</code></h3>
+                    <p style="font-size:.87rem;">Devuelve el nombre de una <strong>vista</strong> (página HTML con Thymeleaf).</p>
+                    <div class="code-wrap"><span class="code-lang">Java</span>
+                        <pre><code>@Controller
 public class VistaController {
     @GetMapping("/inicio")
     public String inicio() {
-        return "index";
+        return "index"; // → index.html
     }
-}
-
-@RestController
+}</code></pre>
+                    </div>
+                </div>
+                <div>
+                    <h3><code>@RestController</code></h3>
+                    <p style="font-size:.87rem;">Devuelve <strong>datos</strong> directamente (JSON, texto).</p>
+                    <div class="code-wrap"><span class="code-lang">Java</span>
+                        <pre><code>@RestController
 public class ApiController {
     @GetMapping("/api/mensaje")
     public String mensaje() {
         return "Hola desde la API";
     }
 }</code></pre>
-            </div></div>
-            <div class="card subtopic-card mb-4"><div class="card-body">
-                <h2 class="section-title">Uso de Thymeleaf</h2>
-                <p>Thymeleaf es un motor de plantillas que permite insertar datos dinámicos dentro de archivos HTML.</p>
-                <pre class="code-block"><code>@Controller
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="edu-card">
+            <h2><span class="num">7</span> Uso de Thymeleaf</h2>
+            <p>Thymeleaf es un motor de plantillas que permite insertar datos dinámicos dentro de archivos HTML. Se integra directamente con Spring Boot.</p>
+            <div class="code-wrap"><span class="code-lang">Java</span>
+                <pre><code>@Controller
 public class HomeController {
     @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("mensaje", "Bienvenido al sitio");
-        return "home";
+        model.addAttribute("usuario", "Sebastián");
+        return "home"; // → templates/home.html
     }
 }</code></pre>
-                <pre class="code-block mt-3"><code>&lt;h1 th:text="${mensaje}"&gt;Texto por defecto&lt;/h1&gt;</code></pre>
-            </div></div>
-            <div class="card subtopic-card"><div class="card-body">
-                <h2 class="section-title">Cookies y sesiones</h2>
-                <p><strong>Cookies:</strong> pequeños datos guardados en el navegador del usuario. Sirven, por ejemplo, para recordar preferencias o mantener una autenticación.</p>
-                <p><strong>Sesiones:</strong> información temporal que el servidor mantiene asociada a un usuario.</p>
-                <div class="example-box p-3">Ejemplo: en una tienda en línea, la sesión puede guardar el carrito de compras mientras el usuario navega por el sitio.</div>
-            </div></div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card info-card mb-4"><div class="card-body">
-                <h4>Resumen rápido</h4>
-                <ul class="mb-0">
-                    <li>Frontend: lo que ve el usuario.</li>
-                    <li>Backend: lógica, datos y procesamiento.</li>
-                    <li>HTTP conecta ambas partes.</li>
-                </ul>
-            </div></div>
-            <div class="card info-card mb-4"><div class="card-body">
-                <h4>Ejemplo de flujo</h4>
-                <ol class="mb-0">
-                    <li>El usuario envía un formulario.</li>
-                    <li>El servidor valida los datos.</li>
-                    <li>La base de datos se actualiza.</li>
-                    <li>El servidor devuelve una respuesta.</li>
-                </ol>
-            </div></div>
-            <div class="card info-card"><div class="card-body">
-                <h4>Nota</h4>
-                <p class="mb-0">Spring Boot se usa mucho porque permite desarrollar aplicaciones Java web de forma más rápida y organizada.</p>
-            </div></div>
-        </div>
-    </div>
-</main>
+            </div>
+            <div class="code-wrap"><span class="code-lang">HTML (Thymeleaf)</span>
+                <pre><code>&lt;h1 th:text="${mensaje}"&gt;Texto por defecto&lt;/h1&gt;
+&lt;p th:text="'Hola, ' + ${usuario}"&gt;&lt;/p&gt;
 
-<footer class="text-white py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-            <strong>Proyecto educativo de Programación IV</strong><br>
+&lt;!-- Iteración --&gt;
+&lt;ul&gt;
+  &lt;li th:each="item : ${lista}" th:text="${item}"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Condicional --&gt;
+&lt;p th:if="${activo}"&gt;Sesión activa&lt;/p&gt;</code></pre>
+            </div>
         </div>
-        <div>
-            Sitio web desarrollado con HTML5, CSS y Bootstrap.
+
+        <!-- 8 -->
+        <div class="edu-card">
+            <h2><span class="num">8</span> Cookies y Sesiones</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+                <div>
+                    <h3>Cookies</h3>
+                    <p style="font-size:.9rem;">Pequeños datos guardados en el <strong>navegador</strong> del usuario. Sirven para recordar preferencias o mantener una autenticación.</p>
+                    <div class="callout info">
+                        <span class="callout-icon"></span>
+                        <div style="font-size:.85rem;">Las cookies tienen una fecha de expiración y pueden ser seguras (HTTPS-only) o de sesión (se eliminan al cerrar el navegador).</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Sesiones</h3>
+                    <p style="font-size:.9rem;">Información temporal que el <strong>servidor</strong> mantiene asociada a un usuario durante su visita.</p>
+                    <div class="callout info">
+                        <span class="callout-icon"></span>
+                        <div style="font-size:.85rem;">Ejemplo: en una tienda en línea, la sesión guarda el carrito de compras mientras el usuario navega por el sitio.</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <!-- Flujo resumen -->
+        <div class="edu-card" style="border-left:4px solid var(--teal);">
+            <h2>Flujo completo de una solicitud</h2>
+            <ol>
+                <li>El usuario envía un formulario desde el navegador.</li>
+                <li>El navegador hace un <strong>HTTP POST</strong> al servidor.</li>
+                <li>El <strong>@Controller</strong> en Spring Boot recibe la solicitud.</li>
+                <li>Un <strong>@Service</strong> inyectado procesa la lógica.</li>
+                <li>La base de datos se actualiza.</li>
+                <li>El servidor devuelve una respuesta (vista Thymeleaf o JSON).</li>
+            </ol>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:.75rem;">
+            <a href="css.html" class="btn-edu btn-ghost-edu" style="color:var(--ink);background:var(--cream);border:1px solid var(--rule);">← CSS</a>
+            <a href="javascript.html" class="btn-edu btn-primary-edu">Siguiente: JavaScript →</a>
+        </div>
+
+    </main>
+</div>
+
+<footer>
+    <div><strong>Programación IV — Tarea Continua</strong></div>
+    <div>Sebastián Gómez · HTML5, CSS3, JavaScript</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/nav.js"></script>
 </body>
 </html>
