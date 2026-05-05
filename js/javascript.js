@@ -3,13 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreElement = document.getElementById("score");
     const remainingDotsElement = document.getElementById("remainingDots");
     const statusElement = document.getElementById("gameStatus");
-    const restartButton = document.getElementById("reiniciarJuego");
     const inputAlto  = document.getElementById("alto");
     const inputAncho = document.getElementById("ancho");
     const btnGenerar = document.getElementById("btnGenerar");
 
     if (!boardElement || !scoreElement || !remainingDotsElement ||
-        !statusElement || !restartButton || !inputAlto || !inputAncho || !btnGenerar) {
+        !statusElement || !inputAlto || !inputAncho || !btnGenerar) {
         return;
     }
 
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dotsRemaining = 0;
         gameOver = false;
         gameStarted = false;
-        statusElement.textContent = "Haz clic en una celda para colocar al jugador";
+        statusElement.textContent = "Coloque al jugador en una celda";
         scoreElement.textContent  = "0";
         remainingDotsElement.textContent = "0";
 
@@ -242,9 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnGenerar.addEventListener("click", crearTablero);
 
-    restartButton.addEventListener("click", () => {
-        if (alto > 0 && ancho > 0) crearTablero();
-    });
 
     crearTablero();
 });

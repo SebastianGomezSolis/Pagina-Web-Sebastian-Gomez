@@ -73,7 +73,6 @@
             <h2><span class="num">1</span> ¿Qué es JavaScript?</h2>
             <p>JavaScript es el lenguaje que agrega comportamiento e interactividad a las páginas web. Permite reaccionar a eventos, modificar el DOM, validar formularios, mover elementos en pantalla y construir juegos en el navegador.</p>
             <div class="callout tip">
-                <span class="callout-icon"></span>
                 <div><strong>Idea clave:</strong> HTML estructura, CSS da estilo, y JavaScript agrega <em>lógica e interacción</em>.</div>
             </div>
         </div>
@@ -153,16 +152,6 @@
                     <li><code>DOMContentLoaded</code> — para iniciar el programa cuando el DOM ya existe.</li>
                 </ul>
             </div>
-            <div class="edu-card" style="margin-bottom:0;">
-                <h2>Conceptos aplicados en el juego</h2>
-                <ul>
-                    <li>Generación dinámica del tablero con HTML.</li>
-                    <li>Clase <code>Punto</code> para representar posiciones.</li>
-                    <li>Manejo de eventos con teclado y clic.</li>
-                    <li>Temporizadores con <code>setInterval</code>.</li>
-                    <li>Detección de colisiones.</li>
-                </ul>
-            </div>
         </div>
 
         <!-- JUEGO -->
@@ -171,7 +160,6 @@
             <p>Juego inspirado en Pac-Man con tablero generado dinámicamente, obstáculos, puntos, enemigos y condiciones de victoria o derrota. Desarrollado con HTML, CSS y JavaScript puro.</p>
 
             <div class="callout info" style="margin-bottom:1.25rem;">
-                <span class="callout-icon"></span>
                 <div>
                     <strong>Instrucciones:</strong>
                     <ol style="margin:.4rem 0 0;padding-left:1.2rem;">
@@ -193,17 +181,16 @@
                     <label for="ancho">Ancho</label>
                     <input id="ancho" type="number" value="10" min="5" max="20" step="1">
                 </div>
-                <button id="btnGenerar" class="btn-game start">▶ Generar tablero</button>
-                <button id="reiniciarJuego" class="btn-game restart">↺ Reiniciar</button>
+                <button id="btnGenerar" class="btn-game start">Generar tablero</button>
             </div>
 
             <!-- Board + Panel -->
             <div class="game-wrap">
                 <div id="gameBoard" aria-label="Tablero del juego"></div>
                 <div id="gamePanel">
-                    <div class="g-stat"><span class="g-label">Puntaje</span><span class="g-val" id="score">0</span></div>
-                    <div class="g-stat"><span class="g-label">Puntos restantes</span><span class="g-val" id="remainingDots">0</span></div>
-                    <div class="g-stat"><span class="g-label">Estado</span><span class="g-val g-status" id="gameStatus">Genera un tablero</span></div>
+                    <div class="g-stat"><span class="g-label">Puntaje:</span><span class="g-val" id="score">0</span></div>
+                    <div class="g-stat"><span class="g-label">Puntos restantes:</span><span class="g-val" id="remainingDots">0</span></div>
+                    <div class="g-stat"><span class="g-label">Estado:</span><span class="g-val g-status" id="gameStatus">Genera un tablero</span></div>
                     <div class="legend">
                         <div class="legend-row"><div class="l-sq" style="background:#2d3561;"></div> Muro</div>
                         <div class="legend-row"><div class="l-sq" style="background:#1a3a60;"></div> Pac-Man 🟡</div>
