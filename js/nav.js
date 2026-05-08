@@ -10,7 +10,6 @@
 
     const cur = window.location.pathname.split('/').pop() || 'index.html';
 
-    // Topbar
     const topbar = document.getElementById('topbar');
     if (topbar) {
         topbar.innerHTML = `
