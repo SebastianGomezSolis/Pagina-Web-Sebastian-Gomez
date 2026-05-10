@@ -9,11 +9,24 @@
 </head>
 <body>
 
-<header class="topbar" id="topbar"></header>
+<header class="topbar" id="topbar">
+    <a class="topbar-brand" href="index.html">
+        <img src="img/web-logo.png" alt="Logo">
+        Programación IV
+    </a>
+    <div class="topbar-spacer"></div>
+    <nav class="topbar-nav">
+        <a href="index.html">Inicio</a>
+        <a href="fundamentos.html">Fundamentos</a>
+        <a href="html.html" class="active">HTML</a>
+        <a href="css.html">CSS</a>
+        <a href="backend.html">Backend</a>
+        <a href="javascript.html">JavaScript</a>
+    </nav>
+    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menú">☰</button>
+</header>
 
 <div class="page-shell">
-    <aside class="sidebar" id="sidebar"></aside>
-
     <main class="content">
 
         <nav class="breadcrumb-edu">
@@ -227,7 +240,7 @@
     <div>Sebastián Gómez · HTML5, CSS3, JavaScript</div>
 </footer>
 
-<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
