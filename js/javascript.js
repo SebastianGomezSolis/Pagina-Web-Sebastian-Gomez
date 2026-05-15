@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    function clampInput(el) {
+        el.addEventListener("input", () => {
+            let v = parseInt(el.value);
+            if (isNaN(v)) v = 5;
+            if (v < 5) v = 5;
+            if (v > 20) v = 20;
+            el.value = v;
+        });
+    }
+    clampInput(inputAlto);
+    clampInput(inputAncho);
+
     class Punto {
         constructor(x, y) {
             this.x = x;
@@ -32,8 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let enemyInterval = null;
 
     function crearTablero() {
-        alto  = Math.max(5, parseInt(inputAlto.value)  || 10);
-        ancho = Math.max(5, parseInt(inputAncho.value) || 10);
+        alto  = Math.min(20, Math.max(5, parseInt(inputAlto.value)  || 10));
+        ancho = Math.min(20, Math.max(5, parseInt(inputAncho.value) || 10));
+        inputAlto.value  = alto;
+        inputAncho.value = ancho;
 
         if (enemyInterval) clearInterval(enemyInterval);
         personajeExiste = false;
@@ -240,7 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btnGenerar.addEventListener("click", crearTablero);
-
 
     crearTablero();
 });
